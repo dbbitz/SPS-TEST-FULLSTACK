@@ -1,0 +1,16 @@
+{
+  "name": "test-sps-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "client": "cd client && yarn start",
+    "server": "cd server && yarn start",
+    "dev": "concurrently \"yarn server\" \"yarn client\"",
+    "setup": "yarn install && cd client && yarn install && cd ../server && yarn install && cd .. && yarn dev",
+    "setup-env": "cd server && cp .env.example .env && cd ../client && cp .env.example .env && cd ..",
+    "setup-env-win": "cd server && copy .env.example .env && cd ../client && copy .env.example .env && cd .."
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
